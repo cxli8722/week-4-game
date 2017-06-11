@@ -1,0 +1,19 @@
+body{
+	background-image: url("../images/");
+	z-index: 100;
+	margin:0;
+	margin-right:auto;
+	margin-left:auto;
+	height: 675px;
+	width:960px;
+	position: relative;
+	color:#777777;
+	font-family: Arial,helvetica neue, helvetica, sans-serif;
+}
+	
+.characterimage
+{
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+}
