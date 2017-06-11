@@ -25,22 +25,6 @@ console.log(characters[i])
 }
 
 
- var buttons = function () {
-    letterButton = document.getElementById("userButton");// go to id=userButton
-    letter = document.createElement('ul');// then create ul
-
-    for (var i = 0; i < alphabet.length; i++) { //loop all the letter
-      letter.id = 'alphabet';//assign id to new <ul>
-      list = document.createElement('li'); //create li
-      list.id = 'letter'//assign id to list
-      list.innerHTML = alphabet[i];  // will list alla teh alphabet in the array
-      letterButton.appendChild(letter);// put letter inside of parent div letterbutton
-      letter.appendChild(list);  //put list inside of parent letter
-
-
-    }
-  }
-buttons();
 
 //select your character--> will display all four characters using jquery
 
