@@ -1,3 +1,59 @@
+$('#myModal').modal('show');
+
+
+function reset() {
+	window.StarWar = {
+
+		characterList: [
+	    // 1.  array with property and value. including name, image, hp, attackpower, counterattack power
+	    
+
+				    {
+				        characterName: 'dark vedar',
+				        display: '../images/vedar.jpg',
+				        HP: 200, 
+				        characterPower: 30,
+				        enemyPower: 40,
+				    },
+				    {
+				        characterName: 'luke',
+				        display: '../images/luke.jpg', 
+				        HP: 160,
+				        characterPower: 20,
+				        enemyPower: 30,
+				    },
+				    {
+				        characterName: 'yoda',
+				        display: '../images/yoda.png',
+				        HP: 130, 
+				        characterPower: 10,
+				        enemyPower: 20,
+				    },
+				    {
+				        characterName: 'Han Solo',
+				        display: '../images/hansolo.png',
+				        HP: 150,
+				        characterPower: 20,
+				        enemyPower: 25,
+				    },
+				    {
+				        characterName: 'General Grievous',
+				        display: '../images/general.jpg',
+				        HP: 155,
+				        characterPower: 15,
+				        enemyPower: 20,
+				    },
+				   	{
+				        characterName: 'Chewbacca',
+				        display: '../images/chewbacca.png',
+				        HP: 120,
+				        characterPower: 15,
+				        enemyPower: 30,
+				    }
+	   			]
+
+	   		}
+	   	};
 
 
 
@@ -6,16 +62,34 @@
 
 
 
-var storedimages = [
+
+
+
+
+
+
+
+
+
+/*var storedimages = [
     "../week-4-game/assets/images/darthvader.gif",
     "../week-4-game/assets/images/GeneralGrievous.png",
     "../week-4-game/assets/images/hansolo.png",
     "../week-4-game/assets/images/luke.jpg"
   
-];
+];*/
 
 
 
+
+//var imgNames = ['../images/darthvader.jpg', '../images/GeneralGrievous.png', '../images/GeneralGrievous.png', '../images/luke.jpg'];
+//console.log(imgNames[0])
+
+
+
+
+
+/*
 var characters = [];
 for(var i = 0; i < storedimages.length; i++) {
     var pic = new Image();
@@ -23,8 +97,8 @@ for(var i = 0; i < storedimages.length; i++) {
     characters[i] = pic;
 console.log(characters[i])
 }
-
-
+*/
+//get teh character to appear ont eh div first and then do the attack 
 
 //select your character--> will display all four characters using jquery
 

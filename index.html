@@ -1,18 +1,149 @@
 </style>
 
 </head>
- <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <!--support IE 8 and 9-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1"> 
+   <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <!-- relation to this is rel  and link to style.css  -->
-     <link rel="stylesheet" href="assets/css/reset.css"> 
-     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reset.css"> 
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+  <title>Star Wars Game</title>
 <body>
-<script src="assets/javascript/game.js"></script>
+<!--modal -is a dialog box/popup window that is displayed on top of the current page-->
+<!--when opened, focus should be set to the dialog so a screen reader will begin reading and the keyboard will begin navigating within the dialog. Because the dialog (probably just a <div> element) is not focusable by default, assigning it tabindex="-1" allows focus to be set to it with scripting when it is presented.-->
+  <div  class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog"  role="document">
 
-<div id= "uersButton">
+  <!-- Modal content-->
+
+  <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"  data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"> Welcome to the World of Star Wars</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Please select your character and then your enemy. You attack your enemy please hit the "attack" button.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info center-block" data-dismiss="modal">Ready to Start!</button>
+      </div>
+    </div>
+  </div>
   </div>
 
-<!--
+<!--modal ended-->
+<!--wrapper for rest of the page and will be responive-->
+<div id="wrapper">
+  <!--header-->
+  <header>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1> Star War RPG</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+  <!-- choose character and enemy -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <!-- Select your champion header -->
+          <h4> Select Your character</h4>
+            <div class="col-sm-12 col-md-12 col-lg-12" style="border: black solid;"">
+              <div id="characterOptions">
+                       <!--  characters will be place here before it was selected by user. column is greater than 12 cuz i wannted to wrap -->
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <!---->
+          <h4> Select Your Enemies</h4>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div id="enemyList">
+                <!-- updated enemy list-->
+                <p> List of enemy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--draw a line-->
+        <hr> 
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 text-center" style="border: solid black;">
+            <h2> Battle Arena! </h2>
+          </div>
+        </div>
+        <!-- Arena zoon  -->
+        <div class="row">
+          <div class="col-sm-12 col-md-4 col-lg-4 text-center" style="border: solid black;  background-color: green;">
+            <h2> Your Character!</h2>
+            <div class="col-sm-12 col-md-12 col-lg-12 " >
+                    <!-- When you choose your character this is where it is pushed to -->
+              <div id="yourCharacter">
+
+          <!-- where your character will show-->
+                </div>
+            </div>
+          </div>
+              <!-- This is the attack button -->
+          <div class="col-sm-12 col-md-4 col-lg-4 text-center" style="border: solid black; background-color: blue;">
+
+            <button class="btn btn-danger btn-lg btn3d  attackBtn" id="attackBtn"><span class="glyphicon glyphicon-remove"></span> Attack!</button>
+                  
+          </div>
+
+          <!--Enemy side -->
+          <div class="col-sm-12 col-md-4 col-md-4 text-center" style="border: solid black; background-color: green;"> 
+            <h2> Defender</h2>
+            <div class="col-sm-12 col-md-12 col-lg-12 " style="border: solid black; background-color: blue;">
+          <!-- where your defender pic will be at-->
+              <div id="yourEnemy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+<!---->
+<!---->
+<!---->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+The Google Hosted Libraries is a stable, reliable, high-speed, globally available content distribution network for the most popular, open-source JavaScript libraries.  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- underscore javascript libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<!-- Boostrap  -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- link to jQuery Library -->
+<script src="assets/javascript/game.js"></script>
+<!-- link backstrech.js credit to Copyright (c) 2013 Scott Robbin; Licensed MIT */ -->
+<script type="text/javascript" src="assets/javascript/backstrech.js"></script>
+
+</body>
+</html>
+
+<!-- will use later 
+<div id="imgNames"></div>
+
   <div id=character> Your Characters </div>
     <div>
       <sapn id="darthvader">
@@ -22,18 +153,3 @@
           <img class="characterimage" src="assets/images/luke.jpg">
       </span>
     </div>
-
-
--->
- 
-  <!-- ========================================= -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-
-  <!--<script type="text/javascript">-->
-
-
-
-
-  </script>
-</body>
-</html>
