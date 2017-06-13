@@ -2,8 +2,7 @@ $('#myModal').modal('show');
 
 
 function reset() {
-	window.StarWar = {
-
+	var StarWar = {
 		characterList: [
 	    // 1.  array with property and value. including name, image, hp, attackpower, counterattack power
 	    
@@ -53,14 +52,22 @@ function reset() {
 	   			]
 
 	   		}
+
+	   		for(var i=0; i<StarWar.characterList.length; i++)
+	   		{
+	   			console.log(StarWar.characterList[i].characterName)//obj: starWar.characterList[i]
+	   		}
+
 	   	};
 
+	   	reset();
+
+/// var charaalist= 
 
 
 
 
-
-
+//on click and hid
 
 
 

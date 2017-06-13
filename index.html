@@ -36,78 +36,54 @@
   </div>
 
 <!--modal ended-->
+
+
+
 <!--wrapper for rest of the page and will be responive-->
 <div id="wrapper">
   <!--header-->
   <header>
     <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-12 text-center">
+          <div class="col-sm-12 text-center" style="border: black solid;">
             <h1> Star War RPG</h1>
+            <!--will be changing depending on if it is select your charactor or select your enemy-->
+            <div id="avator"> "" </div>
           </div>
         </div>
-      </div>
-    </header>
-  <!-- choose character and enemy -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-                <!-- Select your champion header -->
-          <h4> Select Your character</h4>
-            <div class="col-sm-12 col-md-12 col-lg-12" style="border: black solid;"">
-              <div id="characterOptions">
-                       <!--  characters will be place here before it was selected by user. column is greater than 12 cuz i wannted to wrap -->
-              </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-                <!---->
-          <h4> Select Your Enemies</h4>
-            <div class="col-sm-12 col-md-12 col-lg-12">
-              <div id="enemyList">
-                <!-- updated enemy list-->
-                <p> List of enemy</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--draw a line-->
-        <hr> 
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12 text-center" style="border: solid black;">
-            <h2> Battle Arena! </h2>
-          </div>
-        </div>
-        <!-- Arena zoon  -->
-        <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-4 text-center" style="border: solid black;  background-color: green;">
-            <h2> Your Character!</h2>
-            <div class="col-sm-12 col-md-12 col-lg-12 " >
-                    <!-- When you choose your character this is where it is pushed to -->
-              <div id="yourCharacter">
+    </div>
+  </header>
 
-          <!-- where your character will show-->
-                </div>
-            </div>
-          </div>
-              <!-- This is the attack button -->
-          <div class="col-sm-12 col-md-4 col-lg-4 text-center" style="border: solid black; background-color: blue;">
+  <div class="row">
+    <div class="col-sm-12 text-center" style="border: black solid;">
+         <!--either images of select your character or select your enemy-->
+      <span id="avatorimages"> ""
+      </span>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-4 text-center" style="border: black solid;">
+     <h1> Your Character</h1>
+      <span id="yourcharacterimage">image</span>
+     <div> "updating hp, attack power, counter attack, win or loose </div>
+    </div> 
+ 
 
-            <button class="btn btn-danger btn-lg btn3d  attackBtn" id="attackBtn"><span class="glyphicon glyphicon-remove"></span> Attack!</button>
-                  
-          </div>
+    <div class="col-sm-4 text-center" style="border: black solid;">
+      <h1> Battle Arena!</h1>
+      <button class="btn btn-danger btn-lg btn3d  attackBtn" id="attackBtn">
+      <span class="glyphicon glyphicon-remove"></span> Attack!</button>
+    </div>
 
-          <!--Enemy side -->
-          <div class="col-sm-12 col-md-4 col-md-4 text-center" style="border: solid black; background-color: green;"> 
-            <h2> Defender</h2>
-            <div class="col-sm-12 col-md-12 col-lg-12 " style="border: solid black; background-color: blue;">
-          <!-- where your defender pic will be at-->
-              <div id="yourEnemy">
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="col-sm-4 text-center" style="border: black solid;">
+      <h1> Defender </h1>
+      <span id="defenderimage">image</span>
+      <div> "updating hp, attack power, counter attack, win or loose </div>
+    </div>
+  </div>
 
+</div>
 
 
 
