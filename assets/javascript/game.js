@@ -1,5 +1,5 @@
 $('#myModal').modal('show');
-
+chosencharacter=false//flag -state of application 
 
 //function reset() {
 	/*var StarWar = {
@@ -61,154 +61,50 @@ $('#myModal').modal('show');
 	   	};*/
 
 	   	var characterList = 
-	   	{
-    	darthVader: { name: "Darth Vador", hp: 34, power: 45,  counterattack:30, image: 'assets/images/vedar.jpg'   },
-    	lukeSkywalker: { name: "Luke Skywalker", hp: 35, power: 48,counterattack:30, image: "assets/images/luke.jpg"  },
-    	yoda: { name: "yoda", hp: 55, power: 58,counterattack:40, image: "assets/images/yoda.png"  },
+	   	
+  		[
+  		 { name: "Darth Vador", hp: 34, power: 45,  counterattack:30, image: 'assets/images/vedar.jpg'   },
+    	{ name: "Luke Skywalker", hp: 35, power: 48,counterattack:30, image: "assets/images/luke.jpg"  },
+    	{ name: "yoda", hp: 55, power: 58,counterattack:40, image: "assets/images/yoda.png"  },
 		
-		};
+		];
 
-		console.log (characterList.darthVader.image)
 		
-
-	   	//reset();
-
-	   //.	<img class="avatorstorage" src="assets/images/vedar.jpg" alt="DarthVedar">
-
- 	var avatorimages = $("<img>");
-
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    	avatorimages.addClass("newimages");
-
-    // Each imageCrystal will be given a src link to the crystal image
-   	 	avatorimages.attr("src", characterList.darthVader.image);
+		
+for(var i=0; i<characterList.length; i++){
+	var imagespan= $("<span>");
+	var avatorimage = $("<img>");
+	avatorimage.addClass("newimage");
+	avatorimage.attr("src", characterList[i].image);
+	avatorimage.attr("data-id", i);
+	avatorimage.click(choicecharacter);
+	imagespan.append(avatorimage);
+	$("#characters").append(imagespan);
 
 
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-   	 	
-  	  // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-    	$("#Characters").append(avatorimages);
-
-
-
-
-	var battlecharacter = $("<img>");
-
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    	avatorimages.addClass("newimages");
-
-    // Each imageCrystal will be given a src link to the crystal image
-   	 	avatorimages.attr("src", characterList.darthVader.image);
-
-
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-   	 	
-  	  // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-    	$("#yourcharacterimage").append(avatorimages);
-
-    	
-
-
-
-
-	var avatorimages2 = $("<img>");
-
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    	avatorimages2.addClass("newimages");
-
-    // Each imageCrystal will be given a src link to the crystal image
-   	 	avatorimages2.attr("src", characterList.lukeSkywalker.image);
-   	 	$("#Characters2").append(avatorimages2);
-   	 	
-
-
-	var avatorimages3 = $("<img>");
-
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    	avatorimages3.addClass("newimages");
-
-    // Each imageCrystal will be given a src link to the crystal image
-   	 	avatorimages3.attr("src", characterList.yoda.image);
-
-
-
-
-
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-   	 	
-  	  // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-    	$("#Characters3").append(avatorimages3);
-
-	$(".newimages").on("click", function() {
-
-    // Clicking the button triggers an alert message.
-   		
-   		
-        $("#Characters2").hide();
-       // alert("You clicked on Darth luke!");
-
-  });
-
-/// var charaalist= 
-
-
-
-
-
-
-//on click and hid
-
-
-
-
-
-
-
-
-
-
-/*var storedimages = [
-    "../week-4-game/assets/images/darthvader.gif",
-    "../week-4-game/assets/images/GeneralGrievous.png",
-    "../week-4-game/assets/images/hansolo.png",
-    "../week-4-game/assets/images/luke.jpg"
-  
-];*/
-
-
-
-
-//var imgNames = ['../images/darthvader.jpg', '../images/GeneralGrievous.png', '../images/GeneralGrievous.png', '../images/luke.jpg'];
-//console.log(imgNames[0])
-
-
-
-
-
-/*
-var characters = [];
-for(var i = 0; i < storedimages.length; i++) {
-    var pic = new Image();
-    pic.src = storedimages[i];
-    characters[i] = pic;
-console.log(characters[i])
 }
-*/
-//get teh character to appear ont eh div first and then do the attack 
+	   //
+function choicecharacter (event){
+	var image = $(event.target);
 
-//select your character--> will display all four characters using jquery
+	
+var character=characterList[(image.attr("data-id"))-0]
 
 
-// select your character --> when click on the character, a function will be called to created a div with that/your character and another div that contain remainding 3 characters
-//select defender --> When click on the remainding 3 characters, a function will be called to remove the chosen defender into a new div below the previous div. 
-// attack- each imagewill have attr(health point, attack power, counterattack)
-// if statemnt to record the increment 
+//characterList[image.target.data("id")]; // get chcaracter represent by the image is click .. 
+console.log(event.target)
+console.log(character)
+	if( chosencharacter){
+		makeEnemy(character)
 
- ///<div id="mydiv" data-atkPower="10" data-healthPoints =  "20" data-counterAtk = "30" ></div>
+	}
+	else {
+		makePlayer(character)
+		chosenCharacter=true;
+	}
+
+}
+
+//created mycharacter 
+// enemies 
+// 
