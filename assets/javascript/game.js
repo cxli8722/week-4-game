@@ -1,5 +1,6 @@
 $('#myModal').modal('show');
-chosencharacter=false//flag -state of application 
+var chosencharacter; //flag -state of application 
+var chosenenemies;
 
 //function reset() {
 	/*var StarWar = {
@@ -59,52 +60,88 @@ chosencharacter=false//flag -state of application
 	   		}
 
 	   	};*/
+	   	//change to object
+	   	// for loop in fucntion 
 
-	   	var characterList = 
+	   	var characterList = {
 	   	
-  		[
-  		 { name: "Darth Vador", hp: 34, power: 45,  counterattack:30, image: 'assets/images/vedar.jpg'   },
-    	{ name: "Luke Skywalker", hp: 35, power: 48,counterattack:30, image: "assets/images/luke.jpg"  },
-    	{ name: "yoda", hp: 55, power: 58,counterattack:40, image: "assets/images/yoda.png"  },
-		
-		];
+  		
+  		 "DarthVador": { name: "Darth Vador", hp: 34, power: 45,  counterattack:30, image: 'assets/images/vedar.jpg'   },
+    	"LukeSkywalker": { name: "Luke Skywalker", hp: 35, power: 48,counterattack:30, image: "assets/images/luke.jpg"  },
+    	"Yoda": { name: "yoda", hp: 55, power: 58,counterattack:40, image: "assets/images/yoda.png"  }
+    };
+	
 
-		
-		
-for(var i=0; i<characterList.length; i++){
+	var emeny=[];
+	//var "key" be anything 
+
+	for ( var key in characterList)
+	{
+
+		console.log("key"+key)
 	var imagespan= $("<span>");
 	var avatorimage = $("<img>");
 	avatorimage.addClass("newimage");
-	avatorimage.attr("src", characterList[i].image);
-	avatorimage.attr("data-id", i);
-	avatorimage.click(choicecharacter);
+	avatorimage.attr("src", characterList[key].image);
+	avatorimage.attr("data-id", key)
+	console.log(avatorimage)
+
+	avatorimage.click(choicecharacter)
 	imagespan.append(avatorimage);
 	$("#characters").append(imagespan);
 
 
-}
-	   //
-function choicecharacter (event){
-	var image = $(event.target);
+	}
+		
+
+	   
+
+
+
+
+function choicecharacter ()
+{
+
+
+	chosencharacter= characterList[$(this).attr("data-id")]//this avatorimage.click
+	console.log(chosencharacter)//chosencharacter=object
+	$("#yourcharacterimage").append(this)
+		$("#avator").text("Please select your enemy");
+	//off function will turn off even handler so that when the user chose a character they can't clikc on it again. 
+	$( this ).off();
+	if (chosencharacter=false){
+		
+	}
+	//remove the event for the chosen character - can do same one for enmeies 
+	//if chosencharacter=flase - 
+	
 
 	
-var character=characterList[(image.attr("data-id"))-0]
+	//chosenenemies =same as above 
+
+	};
+	
+
+//};
+
+//function attack (){
+	
+//	if(chosencharacter && chosenenemies){
+//		choseenemies.hp-= chosencharacter.power 
+//	chosencharacter.power+=10;
 
 
-//characterList[image.target.data("id")]; // get chcaracter represent by the image is click .. 
-console.log(event.target)
-console.log(character)
-	if( chosencharacter){
-		makeEnemy(character)
+//	}
+//}
 
-	}
-	else {
-		makePlayer(character)
-		chosenCharacter=true;
-	}
 
-}
 
-//created mycharacter 
-// enemies 
+// if hit attack button  defener hp - user power && user hp - defender power  
+// user power + 10
+//have to updated both character power and hp 
+
 // 
+
+
+
+//
